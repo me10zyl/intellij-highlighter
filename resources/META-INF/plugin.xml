@@ -6,7 +6,9 @@
 
   <description><![CDATA[
       LocalVariable Highlighter.<br/>
-      --------------
+      LocalVariable and Its ExpressionStatement highlight only.<br/>
+      ps. IfStatement, ForeachStatement and other statement cannot be highlight.<br/>
+      --------------<br/>
       me10zyl@qq.com
     ]]></description>
 

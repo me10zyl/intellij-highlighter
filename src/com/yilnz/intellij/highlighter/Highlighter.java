@@ -54,6 +54,18 @@ public class Highlighter implements Annotator {
 
     @Override
     public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
+        highlight(element, holder);
+        //showPsi(element, holder);
+    }
+
+    private void showPsi(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
+        System.out.println(element);
+        if (element instanceof PsiStatement) {
+            holder.createInfoAnnotation(element, element.getClass().getSimpleName());
+        }
+    }
+
+    private void highlight(@NotNull PsiElement element, @NotNull AnnotationHolder holder){
         final EditorColorsScheme globalScheme = EditorColorsManager.getInstance().getGlobalScheme();
         final Color bg = globalScheme.getDefaultBackground();
         if (element instanceof PsiDeclarationStatement) {
