@@ -1,12 +1,12 @@
 <idea-plugin>
-  <id>com.yilnz.intellij.highlighter.Highlighter</id>
-  <name>Highlighter</name>
-  <version>1.0</version>
+  <id>com.yilnz.intellij.com.yilnz.intellij.highlighter.LocalVariableHighlighter</id>
+  <name>LocalVariable Highlighter</name>
+  <version>1.1</version>
   <vendor email="me10zyl@qq.com" url="https://github.com/me10zyl/intellij-highlighter">me10zyl</vendor>
 
   <description><![CDATA[
       LocalVariable Highlighter.<br/>
-      LocalVariable and Its ExpressionStatement highlight only.<br/>
+      LocalVariable and Its Referenced ExpressionStatement highlight only.<br/>
       ps. IfStatement, ForeachStatement and other statement cannot be highlight.<br/>
       --------------<br/>
       me10zyl@qq.com

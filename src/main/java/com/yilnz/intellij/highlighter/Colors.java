@@ -1,15 +1,9 @@
 package com.yilnz.intellij.highlighter;
 
-import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
-import org.apache.commons.codec.digest.Md5Crypt;
-import sun.security.provider.MD5;
 
 import java.awt.*;
 import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Objects;
 
 public class Colors {
 
