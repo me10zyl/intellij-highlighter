@@ -1,5 +1,5 @@
 <idea-plugin>
-  <id>com.yilnz.intellij.com.yilnz.intellij.highlighter.LocalVariableHighlighter</id>
+  <id>com.yilnz.intellij.highlighter.LocalVariableHighlighter</id>
   <name>LocalVariable Highlighter</name>
   <version>1.1</version>
   <vendor email="me10zyl@qq.com" url="https://github.com/me10zyl/intellij-highlighter">me10zyl</vendor>
