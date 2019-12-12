@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.yilnz.intellij.highlighter.LocalVariableHighlighter</id>
   <name>LocalVariable Highlighter</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <vendor email="me10zyl@qq.com" url="https://github.com/me10zyl/intellij-highlighter">me10zyl</vendor>
 
   <description><![CDATA[
@@ -13,9 +13,10 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      No Changes.
-    ]]>
-  </change-notes>
+    1.0 initial release of plugin <br/>
+    1.1 fix some bugs<br/>
+    1.2 change plugin.xml
+  ]]></change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>
