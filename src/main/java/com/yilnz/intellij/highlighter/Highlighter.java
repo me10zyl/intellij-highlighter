@@ -16,6 +16,7 @@ import java.util.Set;
 public class Highlighter implements Annotator {
 
     private Set<PsiIdentifier> identifierList = new HashSet<>();
+    private int i = 1;
 
     public void traverse(PsiElement psiElement, AnnotationHolder holder, Color bg, Set<PsiIdentifier> identifierList) {
         final PsiElement[] children = psiElement.getChildren();
@@ -54,12 +55,21 @@ public class Highlighter implements Annotator {
 
     @Override
     public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
+        System.out.println(i++);
         highlight(element, holder);
     }
 
     private void highlight(@NotNull PsiElement element, @NotNull AnnotationHolder holder){
         final EditorColorsScheme globalScheme = EditorColorsManager.getInstance().getGlobalScheme();
         final Color bg = globalScheme.getDefaultBackground();
+        //Get LocalVariableList;
+
+        final PsiElement parent = null;
+
+        do {
+
+        } while (parent != null && parent instanceof PsiJavaFile);
+
         if (element instanceof PsiDeclarationStatement) {
             PsiIdentifier identifier = null;
             A:
@@ -78,8 +88,36 @@ public class Highlighter implements Annotator {
                 identifierList.add(identifier);
             }
         }
-        if (element instanceof PsiLocalVariable || element instanceof PsiExpressionStatement) {
-            traverse(element, holder, bg, identifierList);
+        //Add Color to LocalVariable and Its references
+        if (element instanceof PsiIdentifier) {
+            boolean flag = false;
+            if (element.getParent() instanceof PsiReferenceExpression) {
+                final PsiElement prevSibling = element.getPrevSibling();
+                if (prevSibling != null && prevSibling instanceof PsiReferenceParameterList) {
+                    boolean refered = false;
+                    for (PsiIdentifier identifier : identifierList) {
+                        if (element.textMatches(identifier)) {
+                            refered = true;
+                            break;
+                        }
+                    }
+                    if (refered) {
+                        flag = true;
+                    }
+                }
+            } else if (element.getParent() instanceof PsiLocalVariable) {
+                flag = true;
+            }
+            if (flag) {
+                TextRange range = new TextRange(element.getTextRange().getStartOffset(),
+                        element.getTextRange().getEndOffset());
+                Annotation annotation = holder.createInfoAnnotation(range, null);
+                annotation.setEnforcedTextAttributes(Colors.getRanColor(element.getText(), bg));
+            }
         }
+        
+       /* if (element instanceof PsiLocalVariable || element instanceof PsiExpressionStatement) {
+            traverse(element, holder, bg, identifierList);
+        }*/
     }
 }
