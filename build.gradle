@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.yilnz.intellij.highlighter'
-version '1.5'
+version '1.6'
 
 sourceCompatibility = 1.8
 
@@ -31,7 +31,8 @@ patchPluginXml {
     <li>1.2 change plugin.xml</li>
     <li>1.3 add depends </li>
     <li>1.4 reformat </li>
-    <li>1.5 optimize and fix bugs.</li>
+    <li>1.5 optimize and fix bugs</li>
+    <li>1.6 add png</li>
 </ul>
 """
 }

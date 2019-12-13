@@ -8,7 +8,7 @@
       LocalVariable Highlighter.<br/>
       LocalVariable and Its Referenced ExpressionStatement highlight only.<br/>
       ps. IfStatement, ForeachStatement and other statement cannot be highlight.<br/>
-      similar identifier use same color.
+      similar identifier use same color.<br/>
    <img  src="https://github.com/me10zyl/intellij-highlighter/raw/master/1.png" /><br/>
       --------------<br/>
       me10zyl@qq.com
