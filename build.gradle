@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.yilnz.intellij.highlighter'
-version '1.6'
+version '1.7'
 
 sourceCompatibility = 1.8
 
@@ -19,6 +19,7 @@ dependencies {
 
 intellij {
     version '2018.3'
+    java
 }
 
 patchPluginXml {
@@ -33,6 +34,7 @@ patchPluginXml {
     <li>1.4 reformat </li>
     <li>1.5 optimize and fix bugs</li>
     <li>1.6 add png</li>
+    <li>1.7 java only</li>
 </ul>
 """
 }
